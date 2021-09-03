@@ -8,7 +8,7 @@ function IndexPage() {
     <Layout>
       <h1>Todo list</h1>
 
-      {!session && (
+      {!session && !loading && (
         <p>
           Not signed in <br />
           <button onClick={() => signIn()}>Sign in</button>
