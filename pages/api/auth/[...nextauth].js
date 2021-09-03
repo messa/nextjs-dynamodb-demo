@@ -32,7 +32,9 @@ if (process.env.NODE_ENV === 'development') {
         // You can also use the `req` object to obtain additional parameters
         // (i.e., the request IP address)
         if (process.env.NODE_ENV === 'development' && credentials.username === 'admin' && credentials.password === 'admin') {
-          return { email: 'admin@example.com' }
+          return {
+            email: 'admin@example.com',
+          }
         }
         /*
         const res = await fetch("/your/endpoint", {
