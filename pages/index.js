@@ -6,7 +6,7 @@ function IndexPage() {
   const [session, loading ] = useSession()
   return (
     <Layout>
-      <h1>Hello, World!</h1>
+      <h1>Todo list</h1>
 
       {!session && (
         <p>

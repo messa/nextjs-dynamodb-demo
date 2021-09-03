@@ -1,11 +1,13 @@
-import useSWR from 'swr'
+import useSWR, { useSWRConfig } from 'swr'
 import TodoForm from './todoform'
 
 const fetcher = (...args) => fetch(...args).then(res => res.json())
 
 function Todos() {
-  const { data, error } = useSWR('/api/todo-list', fetcher)
+  const { mutate } = useSWRConfig()
+  const { data, error } = useSWR('/api/todo-list', fetcher, { refreshInterval: 10 * 1000 })
   const todoItems = data && data.todoItems
+
   const onCreateTodoItemSubmit = async ({ body }) => {
     const res = await fetch('/api/todo-create', {
       method: 'POST',
@@ -16,7 +18,10 @@ function Todos() {
         body,
       })
     })
+    const { todoItems } = await res.json()
+    mutate('/api/todo-list', { todoItems }, false)
   }
+
   return (
     <div>
       <h2>Todos</h2>
