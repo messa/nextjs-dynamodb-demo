@@ -8,6 +8,8 @@ if (process.env.GITHUB_ID && process.env.GITHUB_SECRET) {
     Providers.GitHub({
       clientId: process.env.GITHUB_ID,
       clientSecret: process.env.GITHUB_SECRET,
+      // https://docs.github.com/en/developers/apps/building-oauth-apps/scopes-for-oauth-apps
+      scope: "read:user",      
     })
   )
 }
@@ -62,4 +64,6 @@ export default NextAuth({
 
   // A database is optional, but required to persist accounts in a database
   // database: process.env.DATABASE_URL,
+  
+  theme: 'light',
 })
