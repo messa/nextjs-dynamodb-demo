@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/messa/nextjs-dynamodb-demo/issues"
   },
-  "homepage": "https://github.com/messa/nextjs-dynamodb-demo#readme"
+  "homepage": "https://github.com/messa/nextjs-dynamodb-demo#readme",
+  "dependencies": {
+    "next": "^11.1.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
 }
