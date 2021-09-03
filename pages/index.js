@@ -1,6 +1,10 @@
+import Layout from '../components/layout'
+
 function IndexPage() {
   return (
-    <h1>Hello, World!</h1>
+    <Layout>
+      <h1>Hello, World!</h1>
+    </Layout>
   )
 }
 
