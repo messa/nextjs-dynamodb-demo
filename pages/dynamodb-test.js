@@ -1,3 +1,6 @@
+// Tady jsem si jen zkoušel, jak se pracuje s DynamoDB a AWS SDK.
+// Tento soubor se při běhu aplikace nijak nepoužívá a není potřeba.
+
 import Layout from '../components/layout'
 import { DynamoDBClient, ListTablesCommand, ScanCommand } from "@aws-sdk/client-dynamodb"
 
